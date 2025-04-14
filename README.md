@@ -78,3 +78,108 @@ Now try to estimate the price of a new house with the following properties:
 In upcoming lessons, you will learn how to use ML.NET to do this prediction automatically. 😊
 
 ---
+
+## Supervised vs Unsupervised Learning
+
+In Machine Learning, most algorithms are categorized into **two main types** based on the kind of data and the learning goal:
+
+---
+
+## 🎓 1. Supervised Learning
+
+In **Supervised Learning**, the model learns from labeled data — data that includes both input **and** the correct output (label).
+
+### ✅ Key Idea
+
+> Learn a function that maps inputs to known outputs.
+
+### 📌Example
+
+| Features              | Label       |
+|-----------------------|-------------|
+| Size=100, Rooms=3     | Price=400   |
+| Size=80, Rooms=2      | Price=300   |
+| Size=60, Rooms=1      | Price=250   |
+
+Here, the model learns to **predict price** based on size and number of rooms.
+
+### 🔍 Applications
+
+- House price prediction
+- Spam email detection
+- Image classification
+- Medical diagnosis
+
+### 📦 Common Algorithms
+
+- Linear Regression
+- Decision Trees
+- Neural Networks
+- Support Vector Machines (SVM)
+
+---
+
+## 🔍 2. Unsupervised Learning
+
+In **Unsupervised Learning**, the data **does not** include labels. The goal is to find **patterns, structure or relationships** within the data.
+
+### ✅Key Idea
+>
+> Explore the data and find hidden structures or groupings.
+
+### 📌Example 
+
+| Features              |
+|-----------------------|
+| Size=100, Rooms=3     |
+| Size=80, Rooms=2      |
+| Size=60, Rooms=1      |
+
+Here, the model might **group similar houses** together without knowing their prices — maybe based on size and rooms.
+
+### 🔍Applications
+
+- Customer segmentation
+- Anomaly detection
+- Market basket analysis
+- Data compression
+
+### 📦Common Algorithms
+
+- K-Means Clustering
+- Hierarchical Clustering
+- Principal Component Analysis (PCA)
+- DBSCAN
+
+---
+
+## 🤔 Which one should I use?
+
+| Situation                         | Use               |
+|----------------------------------|-------------------|
+| You have labeled training data   | Supervised        |
+| You only have raw data           | Unsupervised      |
+| You want to group or cluster     | Unsupervised      |
+| You want to predict specific values | Supervised     |
+
+---
+
+## 💡 Extra Note: Semi-Supervised and Reinforcement Learning
+
+Besides the two main types, there are other forms:
+
+- **Semi-Supervised Learning**: a mix of labeled and unlabeled data.
+- **Reinforcement Learning**: learning through interaction and rewards, often used in robotics and game AI.
+
+---
+
+## 🧪Suggested Exercise
+
+Imagine you have two datasets:
+
+1. A list of student grades and whether they passed or failed.  
+2. A list of students' behavior (time spent studying, attendance, etc.) with no pass/fail info.
+
+Which one would use **supervised learning**, and which one **unsupervised**?
+
+---
