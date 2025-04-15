@@ -271,3 +271,182 @@ To automatically discover structure and similarity in the data by grouping simil
 | Example         | Predict house price      | Email is spam or not       | Group similar customers  |
 
 ---
+
+## 🧠 Installing ML.NET Model Builder in Visual Studio
+
+Model Builder is an intuitive UI tool that lets you build, train, and deploy machine learning models in .NET without having to write code. Here’s a step-by-step guide to install it.
+
+---
+
+### ✅ Prerequisites
+
+- **Visual Studio 2022** or later installed.
+- Workloads:
+  - ✔️ .NET Desktop Development
+  - ✔️ ASP.NET and Web Development (optional, but recommended)
+
+---
+
+### 🚀 Installation Steps
+
+#### 1. Open Visual Studio
+
+Launch your Visual Studio IDE.
+
+---
+
+#### 2. Go to Extensions Menu
+
+Click on:
+
+Extensions > Manage Extensions
+
+---
+
+#### 3. Search for Model Builder
+
+In the **Manage Extensions** window:
+
+- Go to the **Online** tab.
+- Search for: `ML.NET Model Builder`
+
+---
+
+#### 4. Download and Install
+
+- Click on **ML.NET Model Builder** in the list.
+- Press the **Download** button.
+
+Visual Studio will prompt you to close, and then run the Visual Studio Installer to complete the extension installation.
+
+---
+
+#### 5. Restart Visual Studio
+
+After installation, restart Visual Studio.
+
+---
+
+### ✅ Verify Installation
+
+- Right-click on your project in **Solution Explorer**.
+- You should now see the option:
+
+Add > Machine Learning
+
+If you see this, Model Builder is successfully installed.
+
+---
+Happy Model Building! 🎉
+
+## 🧠 Building a Customer Churn Prediction Model with ML.NET Model Builder
+
+This guide walks you through building a binary classification model that predicts whether a customer is likely to churn (leave) or stay, based on demographic and financial data.
+
+---
+
+### ✅ Step 1: Create a New Project
+
+- Open **Visual Studio**.
+- Create a new **Console App (.NET Core)** or **WPF App** project.
+- Name the project (e.g., `CustomerPrediction`).
+
+---
+
+### ✅ Step 2: Launch Model Builder
+
+- Right-click on the project in **Solution Explorer**.
+- Select:  
+
+  ``` bash
+  Add > Machine Learning
+  ```
+
+This opens the **ML.NET Model Builder** window.
+
+---
+
+### ✅ Step 3: Choose a Scenario
+
+- Select the **"Data classification"** scenario.
+- Click **Next**.
+
+This scenario is perfect for predicting categories like Yes/No.
+
+---
+
+### ✅ Step 4: Provide Training Data
+
+- Prepare and select a CSV file, e.g. `customer_churn_data.csv`.
+
+Sample data format:
+
+```csv
+Age,Income,IsMarried,Churn
+25,40000,false,No
+45,80000,true,Yes
+30,50000,true,No
+60,30000,false,Yes
+...
+```
+
+- Select **Churn** as the **Label** column.
+
+---
+
+### ✅ Step 5: Train the Model
+
+- Choose a training time (e.g., 60 seconds).
+- Click **Train**.
+- Wait for the training process to finish.
+- Review evaluation metrics such as accuracy, AUC, F1 score, etc.
+
+---
+
+### ✅ Step 6: Evaluate the Model
+
+- If the metrics are acceptable, continue.
+- If not, click **Improve your model** to:
+  - Add more data
+  - Adjust training time
+  - Re-select features
+
+---
+
+### ✅ Step 7: Deploy the Model
+
+- Click **Deploy your model**.
+- This generates:
+  - `MLModel.zip`: Trained model
+  - `MLModel.cs`: Code to consume the model
+  - `ModelInput.cs` and `ModelOutput.cs`: Data classes
+
+---
+
+### ✅ Step 8: Use the Model in Your App
+
+Sample code to make a prediction:
+
+```csharp
+var sampleData = new ModelInput
+{
+    Age = 40,
+    Income = 60000,
+    IsMarried = true
+};
+
+var predictionResult = MLModel.Predict(sampleData);
+Console.WriteLine($"Prediction: {predictionResult.PredictedLabel}");
+```
+
+---
+
+## 🎉 Done
+
+You now have a working machine learning model that predicts customer churn using ML.NET and Model Builder.
+
+For improvements:
+
+- Add more features (e.g., Location, Tenure, Education)
+- Collect more historical data
+- Experiment with training time and scenario type
